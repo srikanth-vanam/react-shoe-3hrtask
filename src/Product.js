@@ -39,6 +39,12 @@ const Product = (props) => {
       small: +small,
     };
     props.onSave(obj);
+    setName('')
+    setDesc('');
+    setPrice(0);
+    setLarge(0);
+    setMed(0);
+    setSmall(0);
   };
   return (
     <>
@@ -61,6 +67,7 @@ const Product = (props) => {
         <input
           id="price"
           type="number"
+          min={1}
           value={price}
           onChange={priceHandler}
         ></input>
@@ -68,6 +75,7 @@ const Product = (props) => {
         <input
           id="large"
           type="number"
+          min={1}
           value={large}
           onChange={lHandler}
         ></input>
@@ -75,6 +83,7 @@ const Product = (props) => {
         <input
           id="medium"
           type="number"
+          min={1}
           value={med}
           onChange={mHandler}
         ></input>
@@ -82,6 +91,7 @@ const Product = (props) => {
         <input
           id="small"
           type="number"
+          min={1}
           value={small}
           onChange={smallHandler}
         ></input>

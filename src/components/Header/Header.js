@@ -13,7 +13,7 @@ const Header = (props) => {
   return (
     <>
       <header className={classes.outer}>
-        <h1>ReactMeals</h1>
+        <h1>Shoe Store</h1>
         <button onClick={props.onCartShow}>
           
           <span>Your Cart</span>

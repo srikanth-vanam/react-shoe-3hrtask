@@ -14,7 +14,7 @@ const CartProvider = (props) => {
           if(item.large !==0){
             key.large += item.large;
           }
-          if(item.mid!==0){
+          if(item.med!==0){
             key.med+=item.med;
           }
           if(item.small!==0){
