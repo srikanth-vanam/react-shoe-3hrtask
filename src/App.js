@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import DisplayItems from "./DisplayItems";
-import Product from "./Product";
+import DisplayItems from "./components/DisplayItems";
+import Product from "./components/Product";
 import Header from "./components/Header/Header";
 import CartModal from "./components/Cart/CartModal";
-import CartProvider from "./CartProvider";
+import CartProvider from "./components/CartProvider";
 
 function App() {
   const [products, setProducts] = useState([]);

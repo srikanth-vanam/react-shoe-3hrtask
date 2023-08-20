@@ -1,0 +1,43 @@
+.outer{
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: orange;
+    font-size: 1.15rem;
+    border-radius: 12px;
+}
+.outer input:focus{
+    outline: none;
+}
+.outer label{
+    margin-right: 1rem;
+}
+.outer input{
+    font-weight:600;
+    outline: none;
+    height: 25px;
+    padding: .5rem;
+    margin-right: 0.5rem;
+}
+.display{
+    margin: 1rem;
+}
+
+.display input:focus{
+    outline: none;
+}
+.row2 input{
+    width: 4rem;
+    padding-left: .3rem;
+}
+.row,.row2{
+    display: flex;
+    justify-content: space-around;
+    /* text-align: center; */
+    margin-bottom: 1rem;
+}
+.button{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
