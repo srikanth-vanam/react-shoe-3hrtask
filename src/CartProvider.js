@@ -11,43 +11,31 @@ const CartProvider = (props) => {
       for (const key of oldItems) {
         // if item is already present increasing quantity
         if (key.id === item.id) {
-          key.quantity += item.quantity;
+          if(item.large !==0){
+            key.large += item.large;
+          }
+          if(item.mid!==0){
+            key.med+=item.med;
+          }
+          if(item.small!==0){
+            key.small+=item.small
+          }
           itemExists = true;
           break;
         }
       }
       // if item is not there in itemsList adding item to cartItems
-      if (!itemExists && item.quantity !== 0) {
+      if (!itemExists && (item.large !== 0 || item.med !==0 || item.small !==0)) {
         oldItems.push(item);
       }
       return oldItems;
     });
   };
-  const removeItemsHandler = (item) => {
-    setCartItems((prevItems) => {
-      let itemsArray = [...prevItems];
-      for (const Originalitem of itemsArray) {
-        // finding the item through it's id
-        if (Originalitem.id === item.id) {
-          // decreasing the quantity if it's not equal to zero
-          if (Originalitem.quantity !== 0) {
-            Originalitem.quantity -= item.quantity;
-            break;
-          }
-        }
-      }
-      // to remove items if quantity is zero
-      const newCartItems = itemsArray.filter((item) => {
-        return item.quantity !== 0;
-      });
-      return newCartItems;
-    });
-  };
+  
   const cartContext = {
     items: cartItems,
     totalAmount: 0,
     addItems: addItemsHandler,
-    removeItems: removeItemsHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
